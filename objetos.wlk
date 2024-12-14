@@ -41,3 +41,7 @@ object ojota {
         return mago.nombreMago().size() * 10
     }
 }
+
+//instancio objetos magicos
+
+const tunicaEpica = new TunicaEpica(poderBase = 10)
