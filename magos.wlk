@@ -8,9 +8,11 @@ class Mago {
 
     const resistencia
 
-    var property puntosEnergia
+    var property puntosEnergia //lo tomo como la reserva de energia misma
 
     method resistencia() = resistencia
+
+    method nombreMago() = nombreMago
 
     method poderTotal() {
         return  self.sumaDePoderDeObjetosMagicos() * poderInnato
@@ -68,5 +70,14 @@ class MagoInmortal inherits Mago {
     override method esVencidoPor(otroMago) {
         return false
     }
+
+    override method puntosAPerder() = 0
 }
 
+//instanciacion magos
+
+const magoAprendiz = new MagoAprendiz(poderInnato = 100, nombreMago = "Aprendiz", resistencia = 50, puntosEnergia = 200, objetosMagicos = #{ojota})
+
+const magoVeterano = new MagoVeterano(poderInnato = 150, nombreMago = "Mago veterano", resistencia = 100, puntosEnergia = 100, objetosMagicos = #{tunicaEpica})
+
+const magoInmortal = new MagoInmortal(poderInnato = 200, nombreMago = "Inmortal", resistencia = 80, puntosEnergia = 250)
